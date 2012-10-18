@@ -11,7 +11,13 @@ and in Ruby are converted to hashes unless otherwise noted.
 
 We suggest installing the library as a gem.
 
-    gem install --source http://gems.github.com crocodoc-crocodoc-ruby
+If you don't already have the specific_install gem, install it.
+
+    gem install specific_install
+    
+Now you can install the library as a gem directly from the github repo.
+
+    gem specific_install -l git@github.com:crocodoc/crocodoc-ruby.git
 
 You can also add the library as a submodule in your git project.
 
