@@ -344,7 +344,7 @@ end
 # 
 # Delete the file we uploaded from Example #2.
 puts ''
-puts 'Example #6 - Delete the second file we uploaded.'
+puts 'Example #15 - Delete the second file we uploaded.'
 print '  Deleting... '
 
 begin
