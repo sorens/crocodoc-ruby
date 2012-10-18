@@ -49,7 +49,7 @@ end
 
 # == Example #3
 # 
-# Upload another file to Crocodoc. We're uploading Crocodoc's logo as a file.
+# Upload another file to Crocodoc. We're uploading Form W4 from the IRS as a PDF.
 puts ''
 puts 'Example #3 - Upload a sample .pdf as a file.'
 uuid2 = nil
