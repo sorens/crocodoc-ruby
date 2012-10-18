@@ -23,16 +23,16 @@ module Crocodoc
     # persisted.
     # 
     # @param [String] uuid The uuid of the file to create a session for
-    # @param [Hash] params A hash representing:
+    # @param [Hash<String,>] params A hash representing:
     #   [Boolean] 'is_editable' Can users create annotations and comments while
     #     viewing the document with this session key?
-    #   [Hash] 'user' A hash with keys "id" and "name" representing
-    #     a user's unique ID and name in your application; "id" must be a
-    #     non-negative signed 32-bit integer; this field is required if
-    #     is_editable is true
-    #   [String, Array] 'filter' Which annotations should be included if any - this
-    #     is usually a string, but could also be an array if it's a
-    #     comma-separated list of user IDs as the filter
+    #   [Hash<String, String>] 'user' A hash with keys "id" and "name"
+    #     representing a user's unique ID and name in your application; "id"
+    #     must be a non-negative signed 32-bit integer; this field is required
+    #     if is_editable is true
+    #   [String, Array<String>] 'filter' Which annotations should be included
+    #     if any - this is usually a string, but could also be an array if it's
+    #     a comma-separated list of user IDs as the filter
     #   [Boolean] 'is_admin' Can users modify or delete any annotations or comments
     #     belonging to other users?
     #   [Boolean] 'is_downloadable' Can users download the original document?

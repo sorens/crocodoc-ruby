@@ -31,11 +31,12 @@ module Crocodoc
     # hashes about those UUIDs, or can also take a one UUID string and return
     # one status hash for that UUID.
     # 
-    # @param [Array, String] uuids An array of the uuids of the file to check the
-    #   status of - this can also be a single uuid string
+    # @param [Array<String>, String] uuids An array of the uuids of the file to
+    #   check the status of - this can also be a single uuid string
     # 
-    # @return [Array, Hash] A hash of the uuid, status, and viewable bool, or an
-    #   array of the uuid and an error
+    # @return [Array<Hash<String,>>, Hash<String,>] An array of hashes (or just
+    #   an hash if you passed in a string) of the uuid, status, and viewable
+    #   bool, or an array of the uuid and an error
     # @raise [CrocodocError]
     def self.status(uuids)
       is_single_uuid = uuids.is_a? String

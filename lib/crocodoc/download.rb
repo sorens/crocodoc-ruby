@@ -23,9 +23,9 @@ module Crocodoc
     # @param [String] uuid The uuid of the file to download
     # @param [Boolean] is_pdf Should the file be downloaded as a PDF?
     # @param [Boolean] is_annotated Should the file be downloaded with annotations?
-    # @param [String, Array] filter Which annotations should be included if any - this
-    #   is usually a string, but could also be an array if it's a
-    #   comma-separated list of user IDs as the filter
+    # @param [String, Array<String>] filter Which annotations should be
+    #   included if any - this is usually a string, but could also be an array
+    #   if it's a comma-separated list of user IDs as the filter
     # 
     # @return [String] The downloaded file contents as a string
     # @raise CrocodocError
