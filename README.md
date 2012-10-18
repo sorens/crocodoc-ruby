@@ -91,7 +91,7 @@ This function returns a UUID of the file.
     uuid = Crocodoc::Document.upload(url)
     
     // with a file
-    file_handle = File.open(file_path, 'r+')
+    file_handle = File.open(file_path, 'r')
     uuid = Crocodoc::Document.upload(file_handle)
     
 #### Status
