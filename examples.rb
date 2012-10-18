@@ -183,7 +183,7 @@ print '  Downloading... '
 begin
   file = Crocodoc::Download.document(uuid2)
   filename = String(Pathname.new(File.expand_path(__FILE__)).dirname) + '/example-files/test-original.pdf'
-  file_handle = File.open(filename, 'w+')
+  file_handle = File.open(filename, 'w')
   file_handle.write(file)
   puts 'success :)'
   puts '  File was downloaded to ' + filename + '.'
@@ -203,7 +203,7 @@ print '  Downloading... '
 begin
   file = Crocodoc::Download.document(uuid2, true)
   filename = String(Pathname.new(File.expand_path(__FILE__)).dirname) + '/example-files/test.pdf'
-  file_handle = File.open(filename, 'w+')
+  file_handle = File.open(filename, 'w')
   file_handle.write(file)
   puts 'success :)'
   puts '  File was downloaded to ' + filename + '.'
@@ -223,7 +223,7 @@ print '  Downloading... '
 begin
   file = Crocodoc::Download.document(uuid2, true, true, 'all')
   filename = String(Pathname.new(File.expand_path(__FILE__)).dirname) + '/example-files/test-with-options.pdf'
-  file_handle = File.open(filename, 'w+')
+  file_handle = File.open(filename, 'w')
   file_handle.write(file)
   puts 'success :)'
   puts '  File was downloaded to ' + filename + '.'
@@ -243,7 +243,7 @@ print '  Downloading... '
 begin
   file = Crocodoc::Download.thumbnail(uuid2)
   filename = String(Pathname.new(File.expand_path(__FILE__)).dirname) + '/example-files/thumbnail.png'
-  file_handle = File.open(filename, 'w+')
+  file_handle = File.open(filename, 'w')
   file_handle.write(file)
   puts 'success :)'
   puts '  File was downloaded to ' + filename + '.'
@@ -263,7 +263,7 @@ print '  Downloading... '
 begin
   file = Crocodoc::Download.thumbnail(uuid2, 250, 250)
   filename = String(Pathname.new(File.expand_path(__FILE__)).dirname) + '/example-files/thumbnail-large.png'
-  file_handle = File.open(filename, 'w+')
+  file_handle = File.open(filename, 'w')
   file_handle.write(file)
   puts 'success :)'
   puts '  File was downloaded to ' + filename + '.'
@@ -283,7 +283,7 @@ print '  Downloading... '
 begin
   file = Crocodoc::Download.text(uuid2)
   filename = String(Pathname.new(File.expand_path(__FILE__)).dirname) + '/example-files/text.txt'
-  file_handle = File.open(filename, 'w+')
+  file_handle = File.open(filename, 'w')
   file_handle.write(file)
   puts 'success :)'
   puts '  File was downloaded to ' + filename + '.'
