@@ -1,4 +1,4 @@
-# CrocodocException extends the default exception class.
+# CrocodocError extends the default exception class.
 # It adds a code field.
 class CrocodocError < Exception
   # An error code string
