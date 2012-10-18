@@ -69,8 +69,8 @@ module Crocodoc
   #   (use_underscore_separators)
   # @param [String] client Which API client the error is being called from
   # @param [String] method Which method the error is being called from
-  # @param [Hash] response This is a hash of the response, usually from JSON, but
-  #   can also be a string
+  # @param [Hash<String,>, String] response This is a hash of the response,
+  #   usually from JSON, but can also be a string
   # 
   # @raise [CrocodocError]
   def self._error(error, client, method, response)
@@ -87,15 +87,15 @@ module Crocodoc
   #   relative to the base path
   # @param [String] method This is just an addition to the path, for example,
   #   in "/documents/upload" the method would be "upload"
-  # @param [Hash,String] get_params A hash of GET params to be added to the URL -
-  #   this can also be a string
-  # @param [Hash,String] post_params A hash of GET params to be added to the URL -
-  #   this can also be a string
+  # @param [Hash<String, String>] get_params A hash of GET params to be added
+  #   to the URL
+  # @param [Hash<String, String>] post_params A hash of GET params to be added
+  #   to the URL
   # @param [Boolean] is_json Should the file be converted from JSON? Defaults to
   #   true.
   # 
-  # @return [Hash,String] The response hash is usually converted from JSON, but
-  #   sometimes we just return the raw response from the server
+  # @return [Hash<String,>, String] The response hash is usually converted from
+  #   JSON, but sometimes we just return the raw response from the server
   # @raise [CrocodocError]
   def self._request(path, method, get_params, post_params, is_json=true)
     url = @@protocol + '://' + @@host + @@base_path + path + method
