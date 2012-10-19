@@ -8,22 +8,7 @@ Our API is based on REST principles and generally returns JSON encoded responses
 and in Ruby are converted to hashes unless otherwise noted.
 
 ## Installation
-
-We suggest installing the library as a gem.
-
-If you don't already have the specific_install gem, install it.
-
-    gem install specific_install
-    
-Now you can install the library as a gem directly from the github repo.
-
-    gem specific_install -l git@github.com:crocodoc/crocodoc-ruby.git
-
-You can also add the library as a submodule in your git project.
-
-    git submodule add git@github.com:crocodoc/crocodoc-ruby.git
-
-You can also get the library by cloning or downloading.
+You can get the library by cloning or downloading the repo.
 
 To clone:
 
@@ -44,6 +29,8 @@ If you have the gem installed:
 If you have the files locally:
 
     require_relative /path/to/crocodoc-ruby/crocodoc.rb
+
+Please note that this library also requires that the 'rest-client' gem is installed, and a version of Ruby >= 1.9.
     
 ## Getting Started
 
@@ -134,7 +121,7 @@ https://crocodoc.com/docs/api/#dl-doc
 To download a document, use Crocodoc::Download.document().
 Pass in the uuid,
 an optional boolean of whether or not the file should be downloaded as a PDF,
-an optional boolean or whether or not the file should be annotated,
+an optional boolean of whether or not the file should be annotated,
 and an optional filter string.
 This function returns the file contents as a string, which you probably want to save to a file.
 
