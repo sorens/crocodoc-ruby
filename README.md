@@ -8,7 +8,16 @@ Our API is based on REST principles and generally returns JSON encoded responses
 and in Ruby are converted to hashes unless otherwise noted.
 
 ## Installation
-You can get the library by cloning or downloading the repo.
+
+We suggest installing the library as a gem.
+
+    gem install crocodoc
+
+You can also add the library as a submodule in your git project.
+
+    git submodule add git@github.com:crocodoc/crocodoc-ruby.git
+
+You can also get the library by cloning or downloading.
 
 To clone:
 
