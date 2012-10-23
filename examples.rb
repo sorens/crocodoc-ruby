@@ -324,7 +324,7 @@ session_key = nil
 begin
   user = {'id' => 1,
           'name' => 'John Crocodoc'}
-  session_key = Crocodoc::Session.create(uuid2, {'isEditable' => true,
+  session_key = Crocodoc::Session.create(uuid2, {'is_editable' => true,
                                                  'user' => user,
                                                  'filter' => 'all',
                                                  'is_admin' => true,
