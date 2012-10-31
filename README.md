@@ -104,7 +104,7 @@ Pass in the UUID of the file or an array of UUIDS you want to check the status o
 This function returns a hash containing a "status" string" and a "viewable" boolean.
 If you passed in an array instead of a string, this function returns an array of hashes containing the status for each file.
 
-    // $status contains status['status'] and status['viewable']
+    // status contains status['status'] and status['viewable']
     status = Crocodoc::Document.status(uuid)
     
     // statuses contains an array of status hashes
