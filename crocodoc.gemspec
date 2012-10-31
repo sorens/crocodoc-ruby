@@ -1,8 +1,10 @@
 $:.unshift(File.join(File.dirname(__FILE__), 'lib'))
 
+require 'crocodoc/version'
+
 spec = Gem::Specification.new do |s|
   s.name = 'crocodoc'
-  s.version = '1.0.0'
+  s.version = Crocodoc::VERSION
   s.summary = 'Ruby wrapper for the Crocodoc API'
   s.description = 'The Crocodoc API lets you upload documents and then generate secure and customized viewing sessions for them. See https://crocodoc.com for details.'
   s.authors = ['Brandon Goldman']
