@@ -162,7 +162,7 @@ module Crocodoc
       return self._error(error, self.name, __method__, {
         url => url,
         get_params => get_params,
-        postParams => post_params
+        post_params => post_params
       })
     end
     
