@@ -157,8 +157,8 @@ module Crocodoc
                             '404' => 'not_found',
                             '405' => 'method_not_allowed'}
     
-    if http_4xx_error_codes.has_key? http_code
-      error = 'server_error_' + http_code + '_' + http_4xx_error_codes[http_code]
+    if http_4xx_error_codes.has_key? http_code.to_s
+      error = "server_error_#{http_code}_#{http_4xx_error_codes[http_code.to_s]}"
       return self._error(error, self.name, __method__, {
         url => url,
         get_params => get_params,
