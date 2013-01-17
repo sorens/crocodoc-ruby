@@ -30,7 +30,7 @@ module Crocodoc
     # @return [String] The downloaded file contents as a string
     # @raise CrocodocError
     def self.document(uuid, is_pdf=false, is_annotated=false, filter=nil)
-      get_params = {'uuid' => uuid}
+      get_params = {uuid: uuid}
       get_params['pdf'] = 'true' if is_pdf
       get_params['annotated'] = 'true' if is_annotated
       
@@ -49,7 +49,7 @@ module Crocodoc
     # @return [String] The file's extracted text
     # @raise CrocodocError
     def self.text(uuid)
-      get_params = {'uuid' => uuid}
+      get_params = {uuid: uuid}
       Crocodoc._request(self.path, 'text', get_params, nil, false)
     end
   
@@ -62,7 +62,7 @@ module Crocodoc
     # @return [String] The downloaded thumbnail contents
     # @raise CrocodocError
     def self.thumbnail(uuid, width=nil, height=nil)
-      get_params = {'uuid' => uuid}
+      get_params = {uuid: uuid}
     
       if width != nil and height != nil
         get_params['size'] = String(width) + 'x' + String(height)

@@ -22,7 +22,7 @@ module Crocodoc
     # @return [Boolean] Was the file deleted?
     # @raise [CrocodocError]
     def self.delete(uuid)
-      post_params = {'uuid' => uuid}
+      post_params = {uuid: uuid}
       Crocodoc._request(self.path, 'delete', nil, post_params)
     end
     
@@ -41,7 +41,7 @@ module Crocodoc
     def self.status(uuids)
       is_single_uuid = !(uuids.is_a? Array)
       uuids = [uuids] if is_single_uuid
-      get_params = {'uuids' => uuids.join(',')}
+      get_params = {uuids: uuids.join(',')}
       response = Crocodoc._request(self.path, 'status', get_params, nil)
       is_single_uuid ? response[0] : response
     end

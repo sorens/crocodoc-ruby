@@ -43,7 +43,7 @@ module Crocodoc
     # @return [String] A unique session key for the document
     # @raise [CrocodocError]
     def self.create(uuid, params = {})
-      post_params = {'uuid' => uuid}
+      post_params = {uuid: uuid}
 
       if params.has_key? 'is_editable'
         post_params['editable'] = params['is_editable'] ? 'true' : 'false'
