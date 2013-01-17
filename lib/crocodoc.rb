@@ -76,7 +76,7 @@ module Crocodoc
   def self._error(error, client, method, response)
     message = self.name + ': [' + error + '] ' + client + '.' + String(method) + "\r\n\r\n"
     response = JSON.generate(response) if response.is_a? Hash
-    message += response
+    message += response unless response.nil?
     raise CrocodocError.new(message, error)
   end
   
