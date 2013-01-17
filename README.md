@@ -197,7 +197,7 @@ This function returns a session key.
         'is_copyprotected' => false,
         'is_demo' => false,
         'sidebar' => 'visible'
-    ))
+    })
     
 ## Support
 

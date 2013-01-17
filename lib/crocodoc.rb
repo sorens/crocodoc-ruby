@@ -76,7 +76,7 @@ module Crocodoc
   def self._error(error, client, method, response)
     message = self.name + ': [' + error + '] ' + client + '.' + String(method) + "\r\n\r\n"
     response = JSON.generate(response) if response.is_a? Hash
-    message += response
+    message += response unless response.nil?
     raise CrocodocError.new(message, error)
   end
   
@@ -128,7 +128,7 @@ module Crocodoc
       
       if result == 'true'
         json_decoded = true
-      elsif result == 'false'
+      elsif result == 'false' or result == ''
         json_decoded = false
       else
         json_decoded = JSON.parse(result)
@@ -136,42 +136,42 @@ module Crocodoc
   
       if json_decoded == false
         return self._error('server_response_not_valid_json', self.name, __method__, {
-          response => result,
-          get_params => get_params,
-          post_params => post_params
+          response: result,
+          get_params: get_params,
+          post_params: post_params
         })
       end
       
       if json_decoded.is_a? Hash and json_decoded.has_key? 'error'
         return self._error(json_decoded['error'], self.name, __method__, {
-          get_params => get_params,
-          post_params => post_params
+          get_params: get_params,
+          post_params: post_params
         })
       end
         
       result = json_decoded
     end
 
-    http_4xx_error_codes = {'400' => 'bad_request',
-                            '401' => 'unauthorized',
-                            '404' => 'not_found',
-                            '405' => 'method_not_allowed'}
+    http_4xx_error_codes = {400 => 'bad_request',
+                            401 => 'unauthorized',
+                            404 => 'not_found',
+                            405 => 'method_not_allowed'}
     
     if http_4xx_error_codes.has_key? http_code
-      error = 'server_error_' + http_code + '_' + http_4xx_error_codes[http_code]
+      error = 'server_error_' + http_code.to_s + '_' + http_4xx_error_codes[http_code]
       return self._error(error, self.name, __method__, {
-        url => url,
-        get_params => get_params,
-        postParams => post_params
+        url: url,
+        get_params: get_params,
+        post_params: post_params
       })
     end
     
     if http_code >= 500 and http_code < 600
-      error = 'server_error_' + http_code + '_unknown'
+      error = 'server_error_' + http_code.to_s + '_unknown'
       return self._error(error, self.name, __method__, {
-        url => url,
-        get_params => get_params,
-        post_params => post_params
+        url: url,
+        get_params: get_params,
+        post_params: post_params
       })
     end
     
