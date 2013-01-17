@@ -39,7 +39,7 @@ module Crocodoc
     #   bool, or an array of the uuid and an error
     # @raise [CrocodocError]
     def self.status(uuids)
-      is_single_uuid = uuids.is_a? String
+      is_single_uuid = !(uuids.is_a? Array)
       uuids = [uuids] if is_single_uuid
       get_params = {'uuids' => uuids.join(',')}
       response = Crocodoc._request(self.path, 'status', get_params, nil)
