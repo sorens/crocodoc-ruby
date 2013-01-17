@@ -1,6 +1,6 @@
 # CrocodocError extends the default exception class.
 # It adds a code field.
-class CrocodocError < Exception
+class CrocodocError < StandardError
   # An error code string
   @code = nil
   
@@ -10,7 +10,7 @@ class CrocodocError < Exception
   end
 
   def initialize(message, code)
-    @message = message
+    super message
     @code = code
   end
 end
