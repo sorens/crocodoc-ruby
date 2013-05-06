@@ -57,7 +57,7 @@ module Crocodoc
       
       if url_or_file.is_a? String
         post_params['url'] = url_or_file
-      elsif url_or_file.is_a? File
+      elsif url_or_file.respond_to?(:read) && url_or_file.respond_to?(:path)
       	post_params['file'] = url_or_file
       else
       	return Crocodoc::_error('invalid_url_or_file_param', self.name, __method__, nil)
